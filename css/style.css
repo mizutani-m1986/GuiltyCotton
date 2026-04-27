@@ -1,0 +1,1791 @@
+@charset "utf-8";
+
+/* ==============================================
+   Design Tokens
+============================================== */
+
+:root {
+    /* Color */
+    --color-primary: #8e685e;
+    --color-text: #594b46;
+    --color-text-dark: #5a4a3a;
+    --color-text-darker: #3a2e24;
+    --color-text-light: #6b5c57;
+    --color-bg: #cbb8b1;
+    --color-flavors-bg: #a8877b;
+    --color-white: #fff;
+    --color-border: #d9c9b8;
+
+    /* Font */
+    --font-serif-en: "Playfair Display", serif;
+    --font-serif-ja: "Shippori Mincho", "Noto Sans JP", serif;
+
+    /* Spacing */
+    --spacing-section: 50px;
+    --spacing-section-title: 40px;
+    --section-pt: 120px;
+    --section-pb: 100px;
+}
+
+/* ==============================================
+   Main Contents
+============================================== */
+
+html {
+    scroll-behavior: smooth;
+    font-family: var(--font-serif-ja);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.7;
+}
+
+body {
+    margin: 0;
+    position: relative;
+}
+
+/* ==============================================
+   header
+============================================== */
+
+header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    z-index: 100;
+}
+
+header.scrolled .nav {
+    background-color: rgba(142, 104, 94, 0.75);
+    /* --color-primary */
+    backdrop-filter: blur(4px);
+}
+
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ==============================================
+   nav
+============================================== */
+
+.nav {
+    top: 50px;
+    display: flex;
+    position: absolute;
+    margin-left: auto;
+    align-items: center;
+    gap: 24px;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    border-radius: 12px;
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--color-white);
+}
+
+.navi-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.nav-icon img {
+    width: 18px;
+    height: 18px;
+}
+
+/* ====== リセット ======*/
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==============================================
+   Topページへ戻るボタン
+============================================== */
+
+.totop {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(74, 63, 59, 0.75);
+    color: var(--color-white);
+    font-size: 0.75rem;
+    border-radius: 50%;
+    z-index: 200;
+}
+
+/* ==============================================
+   hover
+============================================== */
+
+.nav a:hover {
+    opacity: 0.7;
+}
+
+/* ==============================================
+   fv
+============================================== */
+
+.catch-copy {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 7;
+    color: var(--color-white);
+    font-size: 20px;
+    line-height: 1.5;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    animation: catchFadeIn 1.5s ease-out 1s both;
+}
+
+.sp-br {
+    display: none;
+}
+
+.fv-logo {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    z-index: 9999;
+    width: 8%;
+    max-width: 110px;
+    min-width: 60px;
+    margin: 0;
+}
+
+.fv {
+    position: relative;
+    aspect-ratio: 8 / 4.4;
+    background-color: var(--color-flavors-bg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.fvCloud {
+    position: absolute;
+}
+
+.fvCloud img {
+    width: 100%;
+    height: auto;
+}
+
+.cloudC img {
+    vertical-align: bottom;
+    position: absolute;
+    left: -5%;
+    bottom: 0;
+}
+
+.cloudRT {
+    top: -35%;
+    right: 0;
+    transform: translate(63%);
+    width: 55%;
+    z-index: 6;
+}
+
+.cloudRB {
+    bottom: -15%;
+    right: 0;
+    transform: translateX(40%);
+    width: 40%;
+    z-index: 5;
+}
+
+.cloudC {
+    bottom: -2px;
+    left: 55%;
+    transform: translateX(-50%);
+    width: 97%;
+    height: 100%;
+    mask-image: url(../images/couldC.png);
+    mask-size: 100%;
+    mask-position: center bottom;
+    mask-repeat: no-repeat;
+    z-index: 4;
+}
+
+.cloudLT {
+    top: -20%;
+    left: -25%;
+    transform: translateX(45%);
+    width: 40%;
+    z-index: 2;
+}
+
+.cloudLB {
+    bottom: -25%;
+    left: -10%;
+    width: 40%;
+    z-index: 3;
+}
+
+/* ==============================================
+   雲のアニメーション（ループ）
+============================================== */
+
+/* ふわふわ浮遊アニメーション（各雲のtransformに合わせた個別キーフレーム） */
+.cloudRT {
+    animation: float-RT 6s ease-in-out infinite;
+}
+
+.cloudRB {
+    animation: float-RB 7s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+.cloudLT {
+    animation: float-LT 8s ease-in-out infinite;
+    animation-delay: -4s;
+}
+
+.cloudLB {
+    animation: float-LB 6.5s ease-in-out infinite;
+    animation-delay: -1s;
+}
+
+@keyframes float-RT {
+
+    0%,
+    100% {
+        transform: translate(63%, 0px);
+    }
+
+    50% {
+        transform: translate(63%, -18px);
+    }
+}
+
+@keyframes float-RB {
+
+    0%,
+    100% {
+        transform: translateX(40%);
+    }
+
+    50% {
+        transform: translate(40%, -18px);
+    }
+}
+
+@keyframes float-LT {
+
+    0%,
+    100% {
+        transform: translateX(45%);
+    }
+
+    50% {
+        transform: translate(45%, -18px);
+    }
+}
+
+@keyframes float-LB {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+.cloudC img {
+    animation: fade-in-out 20s infinite;
+}
+
+.cloudC img:nth-child(4) {
+    animation-delay: 0s;
+}
+
+.cloudC img:nth-child(3) {
+    animation-delay: 5s;
+}
+
+.cloudC img:nth-child(2) {
+    animation-delay: 10s;
+}
+
+.cloudC img:nth-child(1) {
+    animation-delay: 15s;
+}
+
+@keyframes fade-in-out {
+    0% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+/* ==============================================
+   キャッチコピー フェードイン（ページ読み込み時）
+============================================== */
+
+@keyframes catchFadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, calc(-50% - 20px));
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+/* ==============================================
+   Storyイラストのアニメーション
+============================================== */
+
+@keyframes float1 {
+
+    0%,
+    100% {
+        transform: translateY(-50px) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(-72px) rotate(1deg);
+    }
+}
+
+@keyframes float2 {
+
+    0%,
+    100% {
+        transform: translateY(70px) translateX(30px) rotate(1deg);
+    }
+
+    50% {
+        transform: translateY(48px) translateX(30px) rotate(-0.5deg);
+    }
+}
+
+
+/* ==============================================
+   Section
+============================================== */
+
+.section {
+    padding: var(--spacing-section) 0;
+}
+
+.section-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==============================================
+   Story
+============================================== */
+
+.story {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+}
+
+.story-content {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.story-text {
+    flex: 1;
+}
+
+.story-image {
+    position: relative;
+    width: 400px;
+}
+
+.story-copy {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.8;
+    margin-bottom: 45px;
+}
+
+.story-bodytxt {
+    font-size: 1rem;
+    line-height: 2.3;
+    color: var(--color-text-light);
+}
+
+.story-main {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* ==============================================
+   フリップカード
+============================================== */
+
+.flip-wrap {
+    perspective: 900px;
+}
+
+.flip-inner {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    transform-style: preserve-3d;
+    border-radius: 12px;
+}
+
+.flip-front,
+.flip-back {
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.flip-front img,
+.flip-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flip-back {
+    transform: rotateY(180deg);
+}
+
+.flip-wrap.is-visible .flip-inner {
+    animation: flipCard 0.9s ease-out forwards;
+}
+
+.flip-wrap.delay-1.is-visible .flip-inner {
+    animation-delay: 0.15s;
+}
+
+.flip-wrap.delay-2.is-visible .flip-inner {
+    animation-delay: 0.30s;
+}
+
+/* スクロールフェードイン */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-reveal--delay1 {
+    transition-delay: 0.15s;
+}
+
+.scroll-reveal--delay2 {
+    transition-delay: 0.3s;
+}
+
+@keyframes flipCard {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+
+/* ==============================================
+   Rotating Text
+============================================== */
+
+.rotating-text {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 190px;
+    height: 190px;
+    z-index: 3;
+}
+
+.rotating-svg {
+    width: 100%;
+    height: 100%;
+    animation: rotate 12s linear infinite;
+}
+
+.rotating-svg text {
+    font-family: var(--font-serif-en);
+    font-size: 13px;
+    fill: var(--color-white);
+    letter-spacing: 3.5px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* ==============================================
+   Features
+============================================== */
+
+.features {
+    padding-top: var(--section-pt);
+    padding-bottom: var(--section-pb);
+}
+
+.feature-item {
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 0;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item img {
+    width: 85%;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.features-title-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.features .section-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 2.5;
+    text-align: center;
+    text-indent: 0.5em;
+}
+
+.features-illust-left {
+    width: 80px;
+    margin-right: 70px;
+    transform: translateY(-50px);
+    animation: float1 3.8s ease-in-out infinite;
+}
+
+.features-illust-right {
+    width: 100px;
+    transform: translateY(70px) translateX(30px);
+    animation: float2 4.2s ease-in-out infinite;
+    z-index: 10;
+    position: relative;
+}
+
+.feature-text {
+    text-align: left;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 48px;
+}
+
+.feature-text h3 {
+    font-size: 1.3rem;
+    margin-bottom: 24px;
+    color: var(--color-white);
+    letter-spacing: 0.05em;
+}
+
+.feature-text p {
+    font-size: 1rem;
+    color: var(--color-white);
+}
+
+
+/* ==============================================
+   境界・波型のオブジェクト
+============================================== */
+
+.wave-divider {
+    position: relative;
+    line-height: 0;
+    height: 450px;
+    background-image: url(../images/strawberry-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.wave-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    object-fit: fill;
+}
+
+
+/* ==============================================
+   Flavors
+============================================== */
+
+.flavors {
+    background-image: url(../images/flavors-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding-top: var(--section-pt);
+    padding-bottom: var(--section-pb);
+}
+
+
+.flavors .section-title {
+    color: var(--color-text);
+    text-align: center;
+}
+
+.flavors-hero {
+    width: 100%;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 0;
+}
+
+.flavors-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* キャッチコピー帯SVG */
+.flavors-copy {
+    width: 100%;
+    margin-top: -12%;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.flavors-copy img {
+    width: 60%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.flavor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px 48px;
+    padding-top: 20px;
+}
+
+.flavor-card {
+    position: relative;
+    padding-top: 80px;
+}
+
+.flavor-card__img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.flavor-card__body {
+    background-color: var(--color-flavors-bg);
+    border-radius: 44% 56% 52% 48% / 48% 52% 52% 48%;
+    padding: 120px 36px 52px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.flavor-card__name {
+    font-size: 1.8rem;
+    font-family: var(--font-serif-en);
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--color-white);
+    margin-bottom: 8px;
+}
+
+.flavor-card__price {
+    font-size: 1rem;
+    color: #e8d5c4;
+    margin-bottom: 20px;
+}
+
+.flavor-card__price span {
+    font-size: 0.72rem;
+    opacity: 0.8;
+}
+
+.flavor-card__desc {
+    font-size: 0.82rem;
+    line-height: 1.9;
+    color: #e8d5c4;
+}
+
+/* ==============================================
+   Topping Custom
+============================================== */
+
+.topping {
+    margin-top: 80px;
+    width: 76%;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    background-image: url(../images/topping-back.webp);
+    min-height: 420px;
+    background-repeat: no-repeat;
+}
+
+.topping-inner {
+    padding: 40px 60px;
+}
+
+.topping-title {
+    font-family: var(--font-serif-en);
+    font-size: 2rem;
+    font-weight: 200;
+    color: var(--color-white);
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 0.08em;
+}
+
+.topping-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.topping-list>li>ul {
+    list-style: none;
+    padding: 0;
+}
+
+.topping-list>li>ul li {
+    color: var(--color-white);
+    font-size: 1rem;
+    line-height: 2.2;
+    letter-spacing: 0.05em;
+}
+
+
+/* ==============================================
+   Order
+============================================== */
+
+.order {
+    background-color: var(--color-flavors-bg);
+    padding-top: var(--section-pt);
+    padding-bottom: var(--section-pb);
+}
+
+.order .section-title {
+    text-align: center;
+    color: var(--color-white);
+}
+
+.order-step {
+    font-size: 1rem;
+}
+
+/* ==============================================
+   Shop
+============================================== */
+
+.shop {
+    padding-top: var(--section-pt);
+    padding-bottom: var(--section-pb);
+}
+
+.shop .section-title {
+    text-align: center;
+}
+
+.shop-content {
+    display: flex;
+    gap: 0;
+    align-items: stretch;
+}
+
+.shop-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 60px 48px 0;
+    font-style: normal;
+}
+
+.shop-info__heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: var(--color-text);
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-text-dark);
+}
+
+.shop-address {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    line-height: 1.9;
+    color: var(--color-text-dark);
+    margin-top: 28px;
+    margin-bottom: 8px;
+}
+
+.shop-tel {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    color: var(--color-text-dark);
+    margin-bottom: 0;
+}
+
+.shop-access {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    color: var(--color-text-dark);
+    margin-top: 28px;
+}
+
+.shop-access__label {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.shop-map-link {
+    display: inline-block;
+    margin-top: 20px;
+    align-self: flex-start;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    color: var(--color-text-dark);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-text-dark);
+    padding-bottom: 3px;
+    transition: opacity 0.2s;
+}
+
+.shop-map-link:hover {
+    opacity: 0.6;
+}
+
+.shop-hours {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 24px;
+    align-items: baseline;
+}
+
+.shop-hours dt {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    color: var(--color-primary);
+    text-transform: uppercase;
+}
+
+.shop-hours dd {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    color: var(--color-text-darker);
+}
+
+.shop-image {
+    width: 420px;
+    max-height: 450px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.shop-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.6s ease;
+    display: block;
+}
+
+.shop-image:hover img {
+    transform: scale(1.05);
+}
+
+/* ==============================================
+   News
+============================================== */
+
+.news {
+    padding-top: var(--section-pt);
+    padding-bottom: var(--section-pb);
+}
+
+.news .section-title {
+    text-align: center;
+}
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(89, 75, 70, 0.2);
+}
+
+.news-item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-bottom: 1px solid rgba(89, 75, 70, 0.2);
+}
+
+.news-item:hover {
+    transform: translateX(10px);
+}
+
+/* SP: タップ時にホバーと同じ動き */
+.news-item:active {
+    transform: translateX(10px);
+}
+
+.news-date {
+    font-family: var(--font-serif-en);
+    font-size: 1rem;
+    color: var(--color-text);
+    white-space: nowrap;
+    min-width: 100px;
+}
+
+.news-cat {
+    font-size: 0.75rem;
+    color: var(--color-text);
+    border: 1px solid var(--color-text);
+    padding: 2px 10px;
+    white-space: nowrap;
+    border-radius: 9999px;
+}
+
+.news-text {
+    flex: 1;
+    font-size: 1rem;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.news-btn {
+    font-family: var(--font-serif-en);
+    font-size: 0.75rem;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    padding: 8px 16px;
+    border-radius: 9999px;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+}
+
+/* ==============================================
+   Banner
+============================================== */
+
+.banner-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.banner-item {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.banner-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: opacity 0.3s ease;
+}
+
+.banner-item:hover img {
+    opacity: 0.85;
+}
+
+.drop-divider {
+    position: relative;
+    line-height: 0;
+    height: 430px;
+    overflow: hidden;
+}
+
+/* 背景スライドショー（記事の手法: フェード＋ズーム） */
+.drop-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: drop-anime 10s 0s infinite;
+    z-index: 0;
+}
+
+.drop-bg-img--1 {
+    background-image: url(../images/fv4.jpg);
+    animation-delay: 0s;
+}
+
+.drop-bg-img--2 {
+    background-image: url(../images/fv2.png);
+    animation-delay: 5s;
+}
+
+@keyframes drop-anime {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 0;
+        transform: scale(1.2);
+        z-index: 10;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+
+.drop-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 20;
+    object-fit: fill;
+}
+
+/* ==============================================
+   Footer
+============================================== */
+
+.footer {
+    background-color: var(--color-bg);
+    padding: 80px 0 48px;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 64px;
+}
+
+.footer-logo img {
+    width: 80px;
+    height: auto;
+}
+
+.footer-copy {
+    font-size: 0.75rem;
+    color: var(--color-text);
+    opacity: 0.7;
+}
+
+/* ==============================================
+   フォント設定
+============================================== */
+
+.section-title,
+.nav-list a,
+.catch-copy h1,
+.order-step,
+.footer-copy,
+.totop {
+    font-family: var(--font-serif-en);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-section-title);
+    font-weight: 200;
+    letter-spacing: 0.08em;
+}
+
+.catch-copy h1 {
+    font-weight: 200;
+    letter-spacing: 0.06em;
+}
+
+.nav-list a {
+    font-weight: 400;
+    letter-spacing: 0.1em;
+}
+
+/* ==============================================
+   ハンバーガーボタン（SP/TB用）
+============================================== */
+
+.hamburger {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 300;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger.scrolled {
+    background-color: rgba(89, 75, 70, 0.85);
+}
+
+.hamburger-line {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background-color: var(--color-white);
+    border-radius: 2px;
+}
+
+.hamburger-label {
+    color: var(--color-white);
+    font-size: 10px;
+    font-family: var(--font-serif-en);
+    letter-spacing: 0.15em;
+    margin-top: 0;
+    font-weight: 400;
+}
+
+/* ==============================================
+   SPナビゲーション（オーバーレイ）
+============================================== */
+
+.sp-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(89, 75, 70, 0.96);
+    z-index: 400;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.sp-nav.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sp-nav-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    line-height: 1;
+}
+
+.sp-nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sp-nav-list a {
+    font-family: var(--font-serif-en);
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.sp-nav-list a:hover {
+    opacity: 0.7;
+}
+
+.sp-nav-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.sp-nav-icons .nav-icon img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
+}
+
+
+/* ==============================================
+   Media Query — TB (max-width: 1024px)
+============================================== */
+
+@media (max-width: 1024px) {
+
+    /* ナビ → ハンバーガーに切り替え（FVレイアウトはPCと同じ） */
+    .header {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .catch-copy {
+        font-size: 18px;
+    }
+
+    .sp-nav {
+        display: flex;
+    }
+
+    /* Story */
+    .story {
+        min-height: 90vh;
+    }
+
+    .story-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .story-image {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .story-copy {
+        font-size: 1.5rem;
+    }
+
+    /* Features */
+    .feature-list {
+        grid-template-columns: repeat(3, 1fr);
+        width: 95%;
+    }
+
+    .features-illust-left {
+        width: 60px;
+        margin-right: 30px;
+    }
+
+    .features-illust-right {
+        width: 70px;
+    }
+
+    /* Flavors */
+    .flavor-grid {
+        gap: 60px 32px;
+    }
+
+    .flavor-card__name {
+        font-size: 1.5rem;
+    }
+
+    .flavor-card__body {
+        padding: 100px 28px 44px;
+    }
+
+    /* Shop */
+    .shop-content {
+        flex-direction: column;
+    }
+
+    .shop-info {
+        padding: 40px 0 40px 0;
+    }
+
+    .shop-image {
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .shop-image img {
+        border-radius: 12px;
+        min-height: 300px;
+    }
+
+    :root {
+        --section-pt: 80px;
+        --section-pb: 70px;
+    }
+
+    /* Order */
+    .order {
+        padding-top: var(--section-pt);
+        padding-bottom: var(--section-pb);
+    }
+}
+
+/* ==============================================
+   Media Query — SP (max-width: 768px)
+============================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* FV */
+    .fv {
+        aspect-ratio: unset;
+        height: 500px;
+        overflow: hidden;
+    }
+
+    .fv-logo {
+        top: 5%;
+        left: 5%;
+        width: 20%;
+        max-width: 65px;
+        min-width: 35px;
+    }
+
+    .catch-copy {
+        font-size: 16px;
+        padding: 0 16px;
+    }
+
+    .sp-br {
+        display: inline;
+    }
+
+    .cloudRT {
+        top: -15%;
+        transform: translateX(60%);
+        width: 75%;
+    }
+
+    .cloudRB {
+        bottom: -10%;
+        transform: translateX(35%);
+        width: 55%;
+    }
+
+
+
+    .cloudLT {
+        top: -15%;
+        left: -10px;
+        transform: translateX(0%);
+        width: 50%;
+    }
+
+    .cloudLB {
+        bottom: -10%;
+        left: -5%;
+        width: 65%;
+    }
+
+    @keyframes float-LT {
+
+        0%,
+        100% {
+            transform: translateX(0%);
+        }
+
+        50% {
+            transform: translate(0%, -18px);
+        }
+    }
+
+    .cloudC {
+        bottom: -10%;
+        left: 60%;
+        transform: translateX(-35%);
+        width: 190%;
+        height: 140%;
+    }
+
+    .cloudC img {
+        bottom: auto;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: none;
+    }
+
+    .cloudC img:nth-child(1) {
+        top: 0;
+        left: 0%;
+    }
+
+    .cloudC img:nth-child(2) {
+        top: 10%;
+        left: -10%;
+    }
+
+    .cloudC img:nth-child(3) {
+        top: 10%;
+        left: 0;
+    }
+
+    .cloudC img:nth-child(4) {
+        top: 18%;
+        left: -20%;
+    }
+
+    /* Section共通 */
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-inner {
+        padding: 0 40px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* Story */
+    .story {
+        min-height: 90vh;
+    }
+
+    .story-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .story-image {
+        width: 100%;
+        max-width: 360px;
+        margin: 80px auto 0;
+    }
+
+    .story-main {
+        margin-top: -20px;
+    }
+
+    .rotating-text {
+        right: -90px;
+    }
+
+    .story-copy {
+        margin-top: 80px;
+        font-size: 1.5rem;
+        margin-bottom: 32px;
+        line-height: 2;
+    }
+
+    .story-bodytxt {
+        font-size: 0.9rem;
+    }
+
+    /* Features */
+    .feature-list {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+        gap: 80px;
+    }
+
+    .feature-item img {
+        width: 100%;
+    }
+
+    .flip-inner {
+        aspect-ratio: unset;
+        height: 300px;
+    }
+
+    .feature-text {
+        margin-top: 30px;
+    }
+
+    .features-title-area {
+        gap: 8px;
+    }
+
+    .features-illust-left {
+        width: 60px;
+        margin-right: 0;
+    }
+
+    .features-illust-right {
+        width: 70px;
+        animation: float2-sp 4.2s ease-in-out infinite;
+    }
+
+    @keyframes float2-sp {
+
+        0%,
+        100% {
+            transform: translateY(70px) translateX(0px) rotate(1deg);
+        }
+
+        50% {
+            transform: translateY(48px) translateX(0px) rotate(-0.5deg);
+        }
+    }
+
+    .features .section-title {
+        font-size: 1.6rem;
+    }
+
+    /* Flavors */
+    .flavors-copy {
+        margin-bottom: 40px;
+    }
+
+    .flavor-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .flavor-card {
+        padding-top: 70px;
+    }
+
+    .flavor-card__img {
+        width: 75%;
+    }
+
+    .flavor-card__body {
+        padding: 100px 28px 44px;
+    }
+
+    .flavor-card__name {
+        font-size: 1.6rem;
+    }
+
+    /* Topping */
+    .topping {
+        width: 100%;
+    }
+
+    .topping-list {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .topping-inner {
+        padding: 30px 24px;
+    }
+
+    :root {
+        --section-pt: 60px;
+        --section-pb: 50px;
+    }
+
+    /* Order */
+    .order {
+        padding-top: var(--section-pt);
+        padding-bottom: var(--section-pb);
+    }
+
+    .order-steps {
+        padding: 0 16px;
+    }
+
+    /* Shop */
+    .shop-image {
+        width: 100%;
+        order: -1;
+        border-radius: 12px;
+    }
+
+    .shop-image img {
+        border-radius: 12px;
+        min-height: 240px;
+    }
+
+    .shop-info {
+        padding: 32px 0;
+    }
+
+    /* News */
+    .news-item {
+        flex-wrap: wrap;
+        gap: 10px 16px;
+        padding: 16px 0;
+    }
+
+    .news-date {
+        min-width: auto;
+        font-size: 0.9rem;
+    }
+
+    .news-text {
+        width: 100%;
+        flex: none;
+    }
+
+    .news-btn {
+        width: auto;
+        margin-left: auto;
+    }
+
+    /* wave-divider */
+    .wave-divider {
+        height: 300px;
+    }
+
+    /* totop */
+    .totop {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 14px;
+        font-size: 0.8rem;
+    }
+}
