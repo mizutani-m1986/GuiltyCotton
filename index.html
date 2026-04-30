@@ -34,7 +34,6 @@
                     <a href="https://x.com/" target="_blank" rel="noopener" class="nav-icon" aria-label="X">
                         <img src="images/x_logo.svg" alt="X">
                     </a>
-
                     <!-- インスタ -->
                     <a href="https://www.instagram.com/?hl=ja" target="_blank" rel="noopener" class="nav-icon"
                         aria-label="Instagram">
@@ -43,7 +42,6 @@
                 </div>
             </nav>
         </div>
-
     </header>
 
     <!-- ===SPナビゲーション（オーバーレイ）=== -->
@@ -52,7 +50,6 @@
         <ul class="sp-nav-list">
             <li><a href="#top">Top</a></li>
             <li><a href="#flavors">Flavors</a></li>
-            <li><a href="#order">Order</a></li>
             <li><a href="#shop">Shop</a></li>
             <li><a href="#news">News</a></li>
         </ul>
@@ -71,7 +68,7 @@
 
     <!-- ===Main Contents=== -->
     <main>
-        <!-- ===FV(動きをつける場所)=== -->
+        <!-- FV -->
         <section class="fv" id="top">
 
             <a href="#top" class="fv-logo">
@@ -114,15 +111,14 @@
                 <img src="images/fv.webp" alt="">
             </div>
 
-
             <div class="catch-copy">
                 <h1>食べるほど、<br class="sp-br">罪なアイス。</h1>
             </div>
         </section>
 
 
-        <!-- Story(お店の想い・商品が作られた経緯) -->
-        <section id="story" class="story section">
+        <!-- Story -->
+        <section class="story section">
             <div class="section-inner">
                 <article class="story-content">
 
@@ -133,18 +129,15 @@
                             自然な甘さに、心がときめく。
                         </p>
                         <p class="story-bodytxt scroll-reveal scroll-reveal--delay1">
-                            ふわりと軽く、やさしい甘さが広がるアイスクリーム。<br>
-                            満たされるのに、ぜんぜん重たくない。<br>
-                            毎日に寄り添う、小さなご褒美です。<br>
-                            ひとくちで、気持ちまでふっと軽く。<br>
-                            Guilty Cottonが、日常にときめく甘さを添えます。<br>
+                            ふわりと軽くやさしい甘さが広がるGuilty Cottonのアイスクリーム。<br>
+                            満たされるのに、ぜんぜん重たくない。 毎日に寄り添う、小さなご褒美です。<br>
+                            ひとくちで、気持ちまでふっと軽く。日常にときめく甘さをそっと添えます。<br>
                             あなたの毎日に、ちょうどいい幸せを。<br>
                         </p>
                     </div>
 
-                    <!-- 右：画像エリア（サークルアニメーション） -->
+                    <!-- 右：画像エリア -->
                     <figure class="story-image scroll-reveal scroll-reveal--delay2">
-
                         <div class="rotating-text">
                             <svg viewBox="0 0 200 200" class="rotating-svg">
                                 <path id="circle-path" fill="none"
@@ -157,7 +150,6 @@
                             </svg>
                         </div>
                         <img class="story-main" src="images/story-ice.webp" alt="ストーリーイメージ">
-
                     </figure>
 
                 </article>
@@ -165,7 +157,7 @@
         </section>
 
 
-        <!-- Features(商品の特徴) -->
+        <!-- Features -->
         <section class="features section">
             <div class="section-inner">
                 <div class="features-title-area">
@@ -175,7 +167,6 @@
                 </div>
 
                 <ul class="feature-list">
-                    <!-- カード① -->
                     <li class="feature-item flip-wrap">
                         <div class="flip-inner">
                             <div class="flip-front">
@@ -191,7 +182,6 @@
                         </div>
                     </li>
 
-                    <!-- カード② -->
                     <li class="feature-item flip-wrap delay-1">
                         <div class="flip-inner">
                             <div class="flip-front">
@@ -207,7 +197,6 @@
                         </div>
                     </li>
 
-                    <!-- カード③ -->
                     <li class="feature-item flip-wrap delay-2">
                         <div class="flip-inner">
                             <div class="flip-front">
@@ -232,13 +221,15 @@
         </div>
 
 
-
-        <!-- Flavors(６種類のフレーバー詳細と価格) -->
+        <!-- Flavors -->
         <section id="flavors" class="flavors section">
             <div class="section-inner">
                 <h2 class="section-title">Flavors</h2>
                 <figure class="flavors-hero scroll-reveal">
-                    <img src="images/flavors-tittle-img.webp" alt="ジェラートのフレーバーイメージ">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="images/flavors-tittle-img-sp.webp">
+                        <img src="images/flavors-tittle-img.webp" alt="ジェラートのフレーバーイメージ">
+                    </picture>
                 </figure>
 
                 <!-- キャッチコピー帯SVG -->
@@ -254,7 +245,8 @@
                             <h3 class="flavor-card__name">Rich Milk</h3>
                             <p class="flavor-card__price">¥450 <span>( tax in- )</span></p>
                             <p class="flavor-card__desc">
-                                濃厚なミルクの風味が<br>口いっぱいに広がる、定番の一品。<br>素材本来のコクを活かした、<br>シンプルで奥行きのある味わいです。<br>やさしい甘さが、<br>心ほどけるひとときを届けます。</p>
+                                濃厚なミルクの風味が<br>口いっぱいに広がる、定番の一品。<br>素材本来のコクを活かした、<br>シンプルで奥行きのある味わいです。<br>やさしい甘さが、<br>心ほどけるひとときを届けます。
+                            </p>
                         </div>
                     </li>
 
@@ -264,7 +256,8 @@
                             <h3 class="flavor-card__name">Chocolate Milk</h3>
                             <p class="flavor-card__price">¥650 <span>( tax in- )</span></p>
                             <p class="flavor-card__desc">
-                                ベルギー産チョコレートを使用した<br>深みと香り豊かな一品です。<br>カカオの芳醇な風味が<br>口いっぱいにゆっくりと広がり、<br>チョコ好きにはたまらない、<br>リッチな余韻が続きます。</p>
+                                ベルギー産チョコレートを使用した<br>深みと香り豊かな一品です。<br>カカオの芳醇な風味が<br>口いっぱいにゆっくりと広がり、<br>チョコ好きにはたまらない、<br>リッチな余韻が続きます。
+                            </p>
                         </div>
                     </li>
 
@@ -274,7 +267,8 @@
                             <h3 class="flavor-card__name">Strawberry</h3>
                             <p class="flavor-card__price">¥680 <span>( tax in- )</span></p>
                             <p class="flavor-card__desc">
-                                国産いちごをたっぷり使用した<br>フレッシュなストロベリー。<br>甘酸っぱく瑞々しい風味が<br>口いっぱいに広がります。<br>素材そのままの美味しさを、<br>やさしく贅沢に仕上げました。</p>
+                                国産いちごをたっぷり使用した<br>フレッシュなストロベリー。<br>甘酸っぱく瑞々しい風味が<br>口いっぱいに広がります。<br>素材そのままの美味しさを、<br>やさしく贅沢に仕上げました。
+                            </p>
                         </div>
                     </li>
 
@@ -295,7 +289,8 @@
                             <h3 class="flavor-card__name">Chocolate Tips</h3>
                             <p class="flavor-card__price">¥650 <span>( tax in- )</span></p>
                             <p class="flavor-card__desc">
-                                チョコチップをたっぷり使用した<br>ザクザク食感が楽しい一品。<br>口どけのよいアイスクリームに<br>心地よい歯ごたえが加わり、<br>食べ進めるたびに楽しさと<br>豊かな風味が広がります。</p>
+                                チョコチップをたっぷり使用した<br>ザクザク食感が楽しい一品。<br>口どけのよいアイスクリームに<br>心地よい歯ごたえが加わり、<br>食べ進めるたびに楽しさと<br>豊かな風味が広がります。
+                            </p>
                         </div>
                     </li>
 
@@ -311,9 +306,13 @@
                     </li>
 
                 </ul>
-                <!-- Topping Custom-->
+
+                <!-- Topping Custom -->
                 <div class="topping scroll-reveal">
-                    <img src="images/topping-back.webp" alt="Custom トッピング背景" class="topping__bg">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="images/topping-back-sp.webp">
+                        <img src="images/topping-back.webp" alt="Custom トッピング背景" class="topping__bg">
+                    </picture>
                     <div class="topping-inner">
                         <h3 class="topping-title">Custom</h3>
                         <ul class="topping-list">
@@ -346,7 +345,6 @@
                 </div>
 
             </div>
-
         </section>
 
 
@@ -386,25 +384,24 @@
                     <li class="news-item">
                         <span class="news-date">2026.3.4</span>
                         <span class="news-cat">お知らせ</span>
-                        <p class="news-text">新フレーバー「ピスタチオ」が登場しました。数量限定のご提供となります。</p>
+                        <p class="news-text">新フレーバー「ピスタチオ」が登場しました。期間限定のご提供となります。</p>
                         <a href="#" class="news-btn">詳しくはこちら</a>
                     </li>
                     <li class="news-item">
-                        <span class="news-date">2026.2.14</span>
+                        <span class="news-date">2026.1.10</span>
                         <span class="news-cat">イベント</span>
                         <p class="news-text">バレンタイン限定セット販売のお知らせ。特別パッケージでご用意いたします。</p>
                         <a href="#" class="news-btn">詳しくはこちら</a>
                     </li>
                     <li class="news-item">
-                        <span class="news-date">2026.1.10</span>
+                        <span class="news-date">2025.12.05</span>
                         <span class="news-cat">店舗情報</span>
-                        <p class="news-text">年末年始の営業時間変更のご案内。12/31〜1/3は特別営業時間となります。</p>
+                        <p class="news-text">年末年始の営業時間のご案内。2026年12月31日〜1月3日は特別営業時間となります。</p>
                         <a href="#" class="news-btn">詳しくはこちら</a>
                     </li>
                 </ul>
             </div>
         </section>
-
 
         <!-- drop divider + BGイメージ -->
         <div class="drop-divider">

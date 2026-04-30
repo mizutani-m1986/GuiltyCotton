@@ -650,13 +650,13 @@ img {
     font-weight: 500;
     line-height: 2.5;
     text-align: center;
-    text-indent: 0.5em;
+    transform: translateX(30px);
 }
 
 .features-illust-left {
     width: 80px;
     margin-right: 70px;
-    transform: translateY(-50px);
+    transform: translateY(-50px) translateX(40px);
     animation: float1 3.8s ease-in-out infinite;
 }
 
@@ -772,9 +772,10 @@ img {
     margin-right: auto;
 }
 
+/* カード幅を基準にcqi単位が機能する */
 .flavor-card {
     position: relative;
-    container-type: inline-size; /* カード幅を基準にcqi単位が機能する */
+    container-type: inline-size;
 }
 
 .flavor-card__img {
@@ -798,6 +799,7 @@ img {
 .flavor-card__name {
     font-size: 9cqi;
     font-family: var(--font-serif-en);
+
     font-weight: 400;
     letter-spacing: 0.06em;
     color: var(--color-white);
@@ -880,10 +882,6 @@ img {
     letter-spacing: 0.05em;
 }
 
-
-/* ==============================================
-   Order
-============================================== */
 
 /* ==============================================
    Shop
@@ -1092,6 +1090,10 @@ img {
     letter-spacing: 0.05em;
 }
 
+
+/* ==============================================
+   背景スライドショー（セクション間の区切りエリア）
+============================================== */
 
 .drop-divider {
     position: relative;
@@ -1411,7 +1413,8 @@ img {
     .shop-image {
         width: 100%;
         border-radius: 12px;
-        order: -1; /* 画像を上に */
+        order: -1;
+        /* 画像を上に */
         max-height: 300px;
     }
 
@@ -1422,7 +1425,8 @@ img {
 
     .shop-info {
         padding: 40px 0 40px 0;
-        order: 1; /* 情報を下に */
+        order: 1;
+        /* 情報を下に */
     }
 
     :root {
@@ -1481,16 +1485,16 @@ img {
 
 
     .cloudLT {
-        top: -15%;
+        top: -5%;
         left: -10px;
         transform: translateX(0%);
         width: 50%;
     }
 
     .cloudLB {
-        bottom: -10%;
+        bottom: 5%;
         left: -5%;
-        width: 65%;
+        width: 80%;
     }
 
     @keyframes float-LT {
@@ -1506,11 +1510,11 @@ img {
     }
 
     .cloudC {
-        bottom: -10%;
+        bottom: 0%;
         left: 60%;
         transform: translateX(-35%);
         width: 190%;
-        height: 140%;
+        height: 130%;
     }
 
     .cloudC img {
@@ -1580,13 +1584,13 @@ img {
 
     .story-copy {
         margin-top: 80px;
-        font-size: 1.5rem;
+        font-size: clamp(1.4rem, 4.5vw, 1.4rem);
         margin-bottom: 32px;
         line-height: 2;
     }
 
     .story-bodytxt {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     /* Features */
@@ -1646,31 +1650,46 @@ img {
     .features .section-title {
         font-size: 1.6rem;
         text-align: center;
-        text-indent: 0;
         font-feature-settings: "palt";
+        transform: translateX(20px);
     }
 
     /* Flavors */
     .flavors-copy {
+        margin-top: -20%;
         margin-bottom: 40px;
+    }
+
+    .flavors-copy img {
+        width: 100%;
     }
 
     .flavor-grid {
         grid-template-columns: 1fr;
         gap: 60px;
-        max-width: 400px;
+        max-width: 350px;
         margin-left: auto;
         margin-right: auto;
     }
 
     /* Topping */
     .topping {
-        width: 100%;
+        width: 85%;
+    }
+
+    .topping-title {
+        font-size: 9cqi;
+        margin-bottom: 5cqi;
     }
 
     .topping-list {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 10px;
+    }
+
+    .topping-list > li > ul li {
+        font-size: 4cqi;
+        line-height: 1.6;
     }
 
     .topping-inner {
