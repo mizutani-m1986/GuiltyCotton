@@ -1471,9 +1471,9 @@ img {
     }
 
     .cloudRT {
-        top: -10%;
-        transform: translateX(30%);
-        width: 60%;
+        top: 0%;
+        transform: translateX(50%);
+        width: 55%;
     }
 
     .cloudRB {
@@ -1487,7 +1487,7 @@ img {
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
-        height: 300px;
+        height: 220px;
     }
 
 
