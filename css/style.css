@@ -1471,15 +1471,23 @@ img {
     }
 
     .cloudRT {
-        top: -15%;
-        transform: translateX(60%);
-        width: 75%;
+        top: -10%;
+        transform: translateX(30%);
+        width: 60%;
     }
 
     .cloudRB {
         bottom: -10%;
         transform: translateX(35%);
         width: 55%;
+    }
+
+    .wave-divider {
+        background-attachment: scroll;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 300px;
     }
 
 
