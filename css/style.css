@@ -1449,7 +1449,7 @@ img {
     /* FV */
     .fv {
         aspect-ratio: unset;
-        height: 500px;
+        height: 470px;
         overflow: hidden;
     }
 
@@ -1457,7 +1457,7 @@ img {
         top: 5%;
         left: 5%;
         width: 20%;
-        max-width: 65px;
+        max-width: 60px;
         min-width: 35px;
     }
 
@@ -1471,9 +1471,9 @@ img {
     }
 
     .cloudRT {
-        top: 0%;
+        top: -5%;
         transform: translateX(50%);
-        width: 55%;
+        width: 70%;
     }
 
     .cloudRB {
@@ -1484,10 +1484,10 @@ img {
 
     .wave-divider {
         background-attachment: scroll;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-        height: 220px;
+        height: 300px;
     }
 
 
@@ -1502,7 +1502,7 @@ img {
     .cloudLB {
         bottom: 5%;
         left: -5%;
-        width: 80%;
+        width: 70%;
     }
 
     @keyframes float-LT {
@@ -1695,7 +1695,7 @@ img {
         gap: 10px;
     }
 
-    .topping-list > li > ul li {
+    .topping-list>li>ul li {
         font-size: 4cqi;
         line-height: 1.6;
     }
