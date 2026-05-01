@@ -245,7 +245,7 @@ img {
     transform: translateX(-50%);
     width: 97%;
     height: 100%;
-    mask-image: url(../images/couldC.png);
+    mask-image: url(../images/couldC.webp);
     mask-size: 100%;
     mask-position: center bottom;
     mask-repeat: no-repeat;
